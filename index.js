@@ -1,7 +1,10 @@
+require('dotenv').config();
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://Siddhant:deedis@cluster0.yfmxfot.mongodb.net/?retryWrites=true&w=majority";
+
+// Replace with your MongoDB Atlas connection string
+const uri = process.env.MONGO_URI;
 const initialUrl = 'https://en.wikipedia.org/wiki/Car';
 
 var count = 0;

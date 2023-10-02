@@ -1,7 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://Siddhant:deedis@cluster0.yfmxfot.mongodb.net/?retryWrites=true&w=majority";
+
+// Replace with your MongoDB Atlas connection string
+const uri = process.env.MONGO_URI;
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
@@ -16,7 +19,6 @@ const client = new MongoClient(uri, {
 });
 
 app.post('/knowitall', async (req, res) => {
-    // console.log(req.body.query)
     const query = req.body.query;
     try{
         await client.connect();

@@ -1,23 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import {useEffect , useState} from 'react';
+import { BrowserRouter as Router , Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
+import ResponsePage from './components/ResponsePage';
 
 function App() {
-
-  // useEffect(()=>{
-  //   fetch('/knowitall')
-  //   .then((res)=>{
-  //     res.text()
-  //     .then(data=>{
-  //       console.log(data)
-  //     })
-  //   }).catch(err=>{
-  //     console.log(err)
-  //   })
-  // },[]);
   
-
   return (
     <div className="App">
       <Homepage/>

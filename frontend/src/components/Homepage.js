@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './homepage.css'
 import axios from 'axios';
+import ResponsePage from './ResponsePage';
 
 export default function Homepage() {
     const [Response , setResponse] = useState([]);
@@ -40,6 +41,7 @@ export default function Homepage() {
         })
     };
 
+
   return (
     <div>
         <div className="logo">
@@ -52,24 +54,6 @@ export default function Homepage() {
             </form>
         </div>
         
-            {
-                (Response.length !== 0)?(
-                    <ul className="Response">
-                        {
-                            Response.map((item,index)=>{
-                                return (<li>
-                                    {item.title}:<a href={item.link}>{item.link}</a>
-                                </li>)
-                            })
-                        }
-                    </ul>
-                ):(
-                    <div>
-                        No Search found
-                    </div>
-                )
-            }
-        
     </div>
-  )
+  );
 }
